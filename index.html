@@ -17,7 +17,7 @@
 <h2> Welcomm to Henncraft!!!</h2>
 <h1>Serverstatus</h1>
 <div id="server-info"></div>
-<div id="motd"></div>
+
 <script>
     fetch('https://eu.mc-api.net/v3/server/info/Henncraft.play-network.io')
         .then(response => response.json())
@@ -28,12 +28,6 @@
             } else {
                 serverInfoDiv.innerHTML = `<p>Server ist offline</p>`;
             }
-          const motdDiv = document.getElementById('motd');
-                if (data.description) {
-                    motdDiv.innerHTML = `<p>MOTD: ${data.motd.raw.join('<br>')}</p>`;
-                } else {
-                    motdDiv.innerHTML = `<p>Keine MOTD verfügbar</p>`;
-                }
         })
         .catch(error => console.error('Error:', error));
 </script>
