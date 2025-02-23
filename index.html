@@ -15,8 +15,21 @@
 </header>
 
 <h2> Welcomm to Henncraft!!!</h2>
-<comics>
-</comics>
+<h1>Serverstatus</h1>
+<div id="server-info"></div>
+<script>
+    fetch('https://eu.mc-api.net/v3/server/info/Henncraft.play-network.io')
+        .then(response => response.json())
+        .then(data => {
+            const serverInfoDiv = document.getElementById('server-info');
+            if (data.online) {
+                serverInfoDiv.innerHTML = `<p>Server ist online</p><p>Spieler online: ${data.players.online}</p>`;
+            } else {
+                serverInfoDiv.innerHTML = `<p>Server ist offline</p>`;
+            }
+        })
+        .catch(error => console.error('Error:', error));
+</script>
 <script src="index.js"></script>
 </body>
 </html>
