@@ -29,7 +29,7 @@
                 serverInfoDiv.innerHTML = `<p>Server ist offline</p>`;
             }
           const motdDiv = document.getElementById('motd');
-                if (data.motd) {
+                if (data.text) {
                     motdDiv.innerHTML = `<p>MOTD: ${data.motd.raw.join('<br>')}</p>`;
                 } else {
                     motdDiv.innerHTML = `<p>Keine MOTD verfügbar</p>`;
